@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
-# Global parameters (set these as in the MATLAB code)
+# Global parameters 
 eNa = 50    # mV
 eK = -90    # mV
 eL = -70    # mV

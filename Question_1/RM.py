@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
-# Global parameters (make sure these are defined before calling the ODE solver)
+# Global parameters 
 t_from = 150
 t_to = 350
 
@@ -52,7 +52,7 @@ def DiffEquations(sol, t):
     return [dvdt, dmdt, dhdt, dndt]
 
 # Time span and initial conditions
-tspan = np.arange(0, 500.01, 0.01)  # equivalent to MATLAB's 0:0.01:500
+tspan = np.arange(0, 500.01, 0.01)  
 
 v_i = -65
 m_i = 0.1

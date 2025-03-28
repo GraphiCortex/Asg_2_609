@@ -169,7 +169,7 @@ def run_model_E(gCaT, g_H_val, Iapp_val, inj_on, inj_off, gSK_val):
     return sol.t, sol.y[4]  # Return time and voltage
 
 
-# Part (e) Subpart (i):
+# Subpart (i):
 # For Iapp = -100 pA, gCaT = 3 nS, inj_on = 200 ms, inj_off = 600 ms,
 # simulate for g_H = 1, 2, 4 nS and overlay the voltage traces.
 Iapp_val_e = -100.0
@@ -182,10 +182,10 @@ g_H_values = [1.0, 2.0, 4.0]
 plt.figure(figsize=(10,6))
 for g_H_val in g_H_values:
     t_sim, v_sim = run_model_E(gCaT_e, g_H_val, Iapp_val_e, inj_on_e, inj_off_e, gSK_val_e)
-    plt.plot(t_sim, v_sim, label=f"g_H = {g_H_val} nS")
+    plt.plot(t_sim, v_sim, label=f"$g_{{H}}$ = {g_H_val} nS")
 plt.xlabel("Time (ms)")
 plt.ylabel("Voltage (mV)")
-plt.title("Subpart (i): Voltage Traces for Different g_H\n(Iapp = -100 pA, gCaT = 3 nS)")
+plt.title("Voltage Traces for Different $g_{H}$\n($I_{app}$ = -100 pA, $g_{CaT}$ = 3 nS)")
 plt.axvspan(inj_on_e, inj_off_e, color='gray', alpha=0.3, label="Injection")
 plt.legend()
 plt.grid(True)
@@ -193,7 +193,7 @@ plt.tight_layout()
 plt.show()
 
 
-# Part (e) Subpart (ii):
+# Subpart (ii):
 # For gCaT = 0 and 3 nS, and g_H = 0 and 4 nS, overlay responses.
 combinations = [
     (0.0, 0.0),  # (gCaT, g_H) = (0, 0)
@@ -204,10 +204,10 @@ combinations = [
 plt.figure(figsize=(10,6))
 for (gCaT_val, g_H_val) in combinations:
     t_sim, v_sim = run_model_E(gCaT_val, g_H_val, Iapp_val_e, inj_on_e, inj_off_e, gSK_val_e)
-    plt.plot(t_sim, v_sim, label=f"gCaT = {gCaT_val}, g_H = {g_H_val}")
+    plt.plot(t_sim, v_sim, label=f"$g_{{CaT}}$ = {gCaT_val}, $g_{{H}}$ = {g_H_val}")
 plt.xlabel("Time (ms)")
 plt.ylabel("Voltage (mV)")
-plt.title("Subpart (ii): Voltage Traces for Different (gCaT, g_H) Combinations")
+plt.title("Voltage Traces for Different ($g_{CaT}$, $g_{H}$) Combinations")
 plt.axvspan(inj_on_e, inj_off_e, color='gray', alpha=0.3, label="Injection")
 plt.legend()
 plt.grid(True)
@@ -215,7 +215,7 @@ plt.tight_layout()
 plt.show()
 
 
-# Part (e) Subpart (iii):
+# Subpart (iii):
 # For Iapp = -100 pA and gCaT = 3 nS, fix inj_on = 100 ms and vary injection duration.
 Iapp_val_iii = -100.0
 gCaT_fixed = 3.0
@@ -234,7 +234,7 @@ for dur in injection_durations:
     plt.plot(t_sim, v_sim, label=f"Duration = {dur} ms")
 plt.xlabel("Time (ms)")
 plt.ylabel("Voltage (mV)")
-plt.title("Subpart (iii): Voltage Traces for Varying Injection Durations\n(Iapp = -100 pA, gCaT = 3 nS, g_H = 2 nS)")
+plt.title("Voltage Traces for Varying Injection Durations\n($I_{app}$ = -100 pA, $g_{CaT}$ = 3 nS, $g_H$ = 2 nS)")
 plt.axvspan(inj_on_iii, inj_on_iii + max(injection_durations), color='gray', alpha=0.3, label="Injection")
 plt.legend()
 plt.grid(True)

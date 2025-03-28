@@ -110,9 +110,9 @@ for T2 in T2_vals:
 # Plot freq vs T2
 plt.figure(figsize=(7,5))
 plt.plot(T2_vals, freqs, 'o-b')
-plt.xlabel('T2 (°C)')
+plt.xlabel('$T_2$ (°C)')
 plt.ylabel('Firing Frequency (Hz)')
-plt.title(f'1(a): Freq vs T2, Q10={Q10}, T1={T1}°C, Iapp=20')
+plt.title(f'Frequency vs $T_{{2}}$, $Q_{{10}}={Q10}$, $T_{{1}}={T1}°C$, $I_{{app}}$=20')
 plt.grid(True)
 plt.tight_layout()
 plt.show()
@@ -140,11 +140,11 @@ for Tsel, trace in [(30, trace_30), (60, trace_60)]:
         tV, VV = trace
         t_spk, V_spk = extract_spike(tV, VV, threshold=0.0, window=5.0)
         if t_spk is not None:
-            plt.plot(t_spk, V_spk, label=f'T2={Tsel}°C', color=colors[Tsel])
+            plt.plot(t_spk, V_spk, label=f'$T_{{2}}={Tsel}°C$', color=colors[Tsel])
 
 plt.xlabel('Time (ms) relative to spike peak')
 plt.ylabel('Membrane Potential (mV)')
-plt.title('Single Spike Overlay at T2=30 and 60°C')
+plt.title('Single Spike Overlay at $T_2=30$ and $60°C$')
 plt.legend()
 plt.grid(True)
 plt.tight_layout()

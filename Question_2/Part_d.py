@@ -142,7 +142,7 @@ def run_model(gCaT, Iapp_val, inj_on, inj_off, gSK_current_val):
                     method='RK45', rtol=1e-6, atol=1e-8)
     return sol.t, sol.y[4]  # Return time and voltage (v is 5th variable)
 
-# Part (d) Subpart (i):
+# Subpart (i):
 # For Iapp = -100 pA, simulate for gCaT = 1, 2, 3, 4 nS and overlay voltage responses.
 Iapp_val_i = -100.0
 inj_on_i = 200.0
@@ -153,34 +153,34 @@ gCaT_values = [1.0, 2.0, 3.0, 4.0]
 plt.figure(figsize=(10,6))
 for gCaT_val in gCaT_values:
     t_sim, v_sim = run_model(gCaT_val, Iapp_val_i, inj_on_i, inj_off_i, gSK_current_fixed)
-    plt.plot(t_sim, v_sim, label=f"gCaT = {gCaT_val} nS")
+    plt.plot(t_sim, v_sim, label=f"$g_{{CaT}}$ = {gCaT_val} nS")
 plt.xlabel("Time (ms)")
 plt.ylabel("Voltage (mV)")
-plt.title("Subpart (i): Voltage Traces for Different gCaT (Iapp = -100 pA)")
+plt.title("Voltage Traces for Different $g_{CaT}$ ($I_{app}$ = -100 pA)")
 plt.axvspan(inj_on_i, inj_off_i, color='gray', alpha=0.3, label="Injection")
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
 
-# Part (d) Subpart (ii):
+# Subpart (ii):
 # For gCaT = 3 nS, vary Iapp = -10, -50, -100 pA and overlay voltage responses.
 gCaT_fixed = 3.0
 Iapp_values = [-10.0, -50.0, -100.0]
 plt.figure(figsize=(10,6))
 for I_val in Iapp_values:
     t_sim, v_sim = run_model(gCaT_fixed, I_val, inj_on_i, inj_off_i, gSK_current_fixed)
-    plt.plot(t_sim, v_sim, label=f"Iapp = {I_val} pA")
+    plt.plot(t_sim, v_sim, label=f"$I_{{app}}$ = {I_val} pA")
 plt.xlabel("Time (ms)")
 plt.ylabel("Voltage (mV)")
-plt.title("Subpart (ii): Voltage Traces for Different Iapp (gCaT = 3 nS)")
+plt.title("Voltage Traces for Different $I_{app}$ ($g_{CaT}$ = 3 nS)")
 plt.axvspan(inj_on_i, inj_off_i, color='gray', alpha=0.3, label="Injection")
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
 
-# Part (d) Subpart (iii):
+# Subpart (iii):
 # For Iapp = -100 pA and gCaT = 3 nS, set inj_on = 100 ms and vary the duration of injection (to = 100, 200, 300, 400 ms).
 Iapp_val_iii = -100.0
 gCaT_fixed = 3.0
@@ -194,7 +194,7 @@ for dur in injection_durations:
     plt.plot(t_sim, v_sim, label=f"Duration = {dur} ms")
 plt.xlabel("Time (ms)")
 plt.ylabel("Voltage (mV)")
-plt.title("Subpart (iii): Voltage Traces for Varying Injection Durations (Iapp = -100 pA, gCaT = 3 nS)")
+plt.title("Voltage Traces for Varying Injection Durations ($I_{app}$ = -100 pA, $g_{CaT}$ = 3 nS)")
 plt.axvspan(inj_on_iii, inj_on_iii + max(injection_durations), color='gray', alpha=0.3, label="Injection Window")
 plt.legend()
 plt.grid(True)

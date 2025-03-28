@@ -137,7 +137,7 @@ plt.plot(time_array[spike_indices], v_sol[spike_indices], 'ro', label="Detected 
 plt.axvspan(t_inj_on, t_inj_off, color='gray', alpha=0.3, label="Current Injection")
 plt.xlabel("Time (ms)")
 plt.ylabel("Voltage (mV)")
-plt.title("Question 2(a): Simulated Voltage Trace")
+plt.title("Simulated Voltage Trace")
 plt.legend()
 plt.grid(True)
 plt.tight_layout()

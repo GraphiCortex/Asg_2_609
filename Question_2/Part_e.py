@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from scipy.signal import find_peaks
 
-# Global Parameters (from professor's MATLAB code and previous parts)
+# Global Parameters 
 # Nernst potentials (mV)
 eNa = 50.0
 eK  = -90.0

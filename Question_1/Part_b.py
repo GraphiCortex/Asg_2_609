@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 from scipy.signal import find_peaks
 
-# Same global parameters as above
+# Global Parameters
 gNa, vNa = 120.0, 50.0
 gK,  vK  = 36.0,  -77.0
 gL,  vL  = 0.3,   -54.4
